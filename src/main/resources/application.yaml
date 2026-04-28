@@ -1,0 +1,18 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /order-bff
+
+spring:
+  application:
+    name: order-bff
+
+logging:
+  level:
+    com.example.orderbff: DEBUG
+
+feign:
+  client:
+    order-ms:
+      url: ${ORDER_MS_URL:http://localhost:8081/order-ms/api}
+
